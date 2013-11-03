@@ -13,6 +13,13 @@ modem.init(function() {
 
 				console.log('Listening to ' + devname);
 			});
+
+			device.fax.on('received', function(id, files) {
+				console.log('Received a fax document:');
+				for (var index in files) {
+					console.log(files[index]);
+				}
+			});
 		});
 	}
 });
